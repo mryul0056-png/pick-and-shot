@@ -32,3 +32,4 @@ if uploaded_file:
             except Exception as e:
                 # 에러 메시지를 더 자세히 보여주도록 수정했습니다.
                 st.error(f"분석 중 오류 발생: {e}")
+
