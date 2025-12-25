@@ -2,7 +2,7 @@ import streamlit as st
 from google import genai
 from PIL import Image
 
-# --- 1. 보안 설정 (새 라이브러리 방식) ---
+# --- 1. 보안 설정 (차세대 SDK 방식) ---
 try:
     api_key = st.secrets["GEMINI_API_KEY"]
     client = genai.Client(api_key=api_key)
@@ -22,7 +22,7 @@ if uploaded_file:
     if st.button("🚀 숏폼 촬영 지시서 생성"):
         with st.spinner("AI 감독님이 전략을 짜는 중..."):
             try:
-                # 새 라이브러리는 모델 이름을 'gemini-1.5-flash'로만 써도 잘 인식합니다.
+                # 차세대 방식은 모델 이름을 깔끔하게 'gemini-1.5-flash'로 씁니다.
                 response = client.models.generate_content(
                     model="gemini-1.5-flash",
                     contents=["너는 숏폼 전문 감독이야. 이 사진의 상품을 분석해서 15초 촬영 구도와 자막을 짜줘.", image]
